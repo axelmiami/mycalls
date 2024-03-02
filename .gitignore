@@ -3,3 +3,6 @@
 logs
 __pycache__
 /records
+config.ini
+substitute_config.py
+mycalls.service

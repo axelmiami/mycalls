@@ -1,0 +1,132 @@
+# Basic settings for connecting to Asterisk Manager Interface (AMI)
+[AMI]
+host = test_string
+port = 123
+username = test_username
+secret = test_secret
+
+# Valid Exten numbers for tracking incoming calls
+[Allowed_Extens]
+extens = test_string,123
+
+[EventHandling]
+Newchannel = true
+TimeRule = false
+TimeGroup = false
+IVRChoose = false
+# The event occurs when the value of a channel variable changes. In the context of Asterisk, channel variables are used to store and transmit information about calls and their processing. These variables can be set either within the Asterisk dialplan or through the AMI.
+VarSet = true
+# Event that is generated when a caller enters a call queue in Asterisk. This event is important in the context of queue and call center management because it provides information about new calls entering the queue, a key aspect of call processing and load balancing among agents.
+QueueCallerJoin = true
+# An event that is generated at the beginning of the dialing process in Asterisk. This event provides information about an attempt to establish a connection between two channels and is an important element for call tracking and analysis.
+DialBegin = true
+# An event that is generated at the end of the dialing process in Asterisk. This event is key to understanding the outcome of a call attempt because it informs whether the call was successfully established, rejected, or failed for some other reason.
+DialEnd = true
+# The event is generated when a call is routed to an agent in the context of a queue. This event is often used in call center systems to track which agents are receiving calls and to analyze load distribution among agents.
+AgentCalled = false
+# Event generated when an agent connects to a queued call. It contains information about the caller's waiting time, the agent who answered the call, and unique channel identifiers.
+AgentConnect = true
+#Generated after the agent completes the call. Contains information about call duration, termination reason (for example, the agent or caller ended the call), and channel IDs.
+AgentComplete = true
+# generated when the Caller ID information on a specific channel changes. This can happen in various scenarios, such as when Asterisk changes the Caller ID according to dialplan logic or when the Caller ID is transferred or changed when a call is forwarded.
+NewCallerid = false
+# Event fired when the channel ends the call
+Hangup = true
+
+[QueueNames]
+001 = test_string
+002 = test_string
+003 = test_string
+004 = test_string
+
+[QueueB24DealCategories]
+001 = test_string,test_string,test_string
+002 = test_string,test_string,test_string,test_string
+003 = test_string
+004 = test_string,test_string
+
+[QueueB24LeadTarget]
+001 = test_string
+002 = test_string,test_string
+003 = test_string
+004 = test_string,test_string
+
+[Records]
+mp3_dir = test_string
+
+# Full logging settings
+[Logging]
+# logging_level (DEBUG, INFO, WARNING, ERROR)
+level = test_string
+dir = test_string
+file = test_string
+max_size = 123
+backup_count = 123
+# True or False (enable detailed logging of AMI events)
+log_ami_events = True
+
+[Logger_main]
+level = test_string
+file = test_string
+
+[Logger_bitrix24_integration]
+level = test_string
+file = test_string
+
+[Logger_call_info]
+level = test_string
+file = test_string
+
+[Logger_config_manager]
+level = test_string
+file = test_string
+
+[Logger_incoming_call_handler]
+level = test_string
+file = test_string
+
+[Logger_call_end_handler]
+level = test_string
+file = test_string
+
+[Logger_audio_file_manager]
+level = test_string
+file = test_string
+
+# Settings for integration with Bitrix24
+[Bitrix24]
+webhook_url = test_string
+call_admin_id = 123
+# It is necessary to make it possible to ignore and deny without checking for values
+lead_uf_list_id = test_string
+deal_uf_list_id = test_string
+
+[Bitrix24_Binding_Call]
+# Linking call activity to Bitrix24 entities by type
+# ALL - to all entities of this type, FILTERED - only to entities of the desired direction of this type, NONE - to no entities of this type
+lead = test_string
+deal = test_string
+
+[Bitrix24_lead_Target_IDs]
+192 = test_string
+194 = test_string
+196 = test_string
+198 = test_string
+200 = test_string
+220 = test_string
+
+# Settings for matching entity types with Short names
+[EntityTypes]
+deal = test_string
+lead = test_string
+
+# Match handlers to entity types
+[Bitrix24EntityTypes]
+    [[deal]]
+    request = test_string
+    name = test_string
+
+    [[lead]]
+    request = test_string
+    name = test_string
+
