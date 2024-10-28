@@ -1,0 +1,6 @@
+asterisk_ami==0.1.7
+configobj==5.0.9
+pydub==0.25.1
+python_daemon==3.0.1
+pytz==2024.2
+Requests==2.32.3

@@ -1,4 +1,4 @@
-# Security Policy for MyCalls v1.0
+# Security Policy for MyCalls v1.1
 
 ## Supported Versions
 

@@ -1,8 +1,9 @@
-.idea
-.venv
-logs
-__pycache__
-/records
+.idea/
+.venv/
+.__pycache__/
+logs/
+records/
+txts/
 config.ini
 substitute_config.py
 mycalls.service
